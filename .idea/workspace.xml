@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26c8d2a1-083e-4d8d-8a1c-f46a682eea41" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codebind/37629.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codebind/admin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codebind/reading-book_3068327.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codebind/student.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codebind/Connectionclass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codebind/UserTypeChooseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codebind/Usertypechoose.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Usertypechoose.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codebind/Usertypechoose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Usertypechoose.java" afterDir="false" />
-    </list>
+    <list default="true" id="26c8d2a1-083e-4d8d-8a1c-f46a682eea41" name="Changes" comment="DBMS commit of working code" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,6 +105,14 @@
       <option name="presentableId" value="Default" />
       <updated>1698335874661</updated>
     </task>
+    <task id="LOCAL-00001" summary="DBMS commit of working code">
+      <created>1698493737640</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698493737640</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,5 +128,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="DBMS commit of working code" />
+    <option name="LAST_COMMIT_MESSAGE" value="DBMS commit of working code" />
   </component>
 </project>
