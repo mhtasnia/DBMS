@@ -1,18 +1,68 @@
 package com.codebind;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.*;
 
 public class StudentLoginpage extends JFrame{
 
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/signup";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "root";
+
+
+    private static boolean validateAccount(String email, String password) {
+        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
+            String query = "SELECT account_pass FROM signupinfo WHERE Stdent_mail = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, email);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                String storedPassword = resultSet.getString("account_pass");
+                return password.equals(storedPassword);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Database connection error: " + e.getMessage());
+        }
+        return false;
+    }
     StudentLoginpage(){
         this.setContentPane(this.panel1);
         this.setVisible(true);
         this.setTitle("Student Login");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setBounds(200, 200, 300, 200);
+        this.setBounds(200, 200, 350, 200);
+        signUpButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Studensignup c = new Studensignup();
+                dispose();
+            }
+        });
+        logInButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String email = textField2.getText();
+                String password = new String(passField1.getPassword());
+
+                if (validateAccount(email, password)) {
+                    //StudentDashboard f = new StudentDashboard();
+                    //dispose();
+                    JOptionPane.showMessageDialog(null, "Login Successful!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Login Failed. Invalid email or password.");
+                }
+            }
+        });
     }
     private JPanel panel1;
-    private JTextField textField1;
+    private JPasswordField passField1;
     private JTextField textField2;
     private JButton logInButton;
     private JButton signUpButton;
