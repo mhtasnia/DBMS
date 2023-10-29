@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.*;
 
 public class StudentLoginpage extends JFrame{
-
+    public static String email;
     private static final String DB_URL = "jdbc:mysql://localhost:3306/signup";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "root";
@@ -52,8 +52,8 @@ public class StudentLoginpage extends JFrame{
                 String password = new String(passField1.getPassword());
 
                 if (validateAccount(email, password)) {
-                    //StudentDashboard f = new StudentDashboard();
-                    //dispose();
+                    StudentDashboard f = new StudentDashboard();
+                    dispose();
                     JOptionPane.showMessageDialog(null, "Login Successful!");
                 } else {
                     JOptionPane.showMessageDialog(null, "Login Failed. Invalid email or password.");
@@ -71,5 +71,6 @@ public class StudentLoginpage extends JFrame{
         StudentLoginpage f1 = new StudentLoginpage();
 
     }
+
 
 }
