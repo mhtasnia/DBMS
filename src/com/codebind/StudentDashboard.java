@@ -23,6 +23,7 @@ public class StudentDashboard extends JFrame {
     private JComboBox combobox2;
     private JDateChooser JDateChooser1;
     private JTextField textField1;
+    private JTextField textField2;
 
 
     private void createUIComponents() {
