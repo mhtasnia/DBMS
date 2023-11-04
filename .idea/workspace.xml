@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26c8d2a1-083e-4d8d-8a1c-f46a682eea41" name="Changes" comment="DBMS commit of working code">
-      <change afterPath="$PROJECT_DIR$/src/com/codebind/computer-icons-login-user-system-administrator-image-admin-thumbnail.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codebind/computer-icons-login-user-system-administrator-image-admin-thumbnail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codebind/images.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codebind/pngtree-check-mark-gold-leaf-material-element-image_2285370 (1).jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codebind/pngtree-check-mark-gold-leaf-material-element-image_2285370.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codebind/success-student-consulting_7109-29.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codebind/ver.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codebind/Usertypechoose.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Usertypechoose.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/AdminInterface.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/AdminInterface.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/AdminInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/AdminInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Managementlogin.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Managementlogin.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Managementlogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Managementlogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Studensignup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Studensignup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +49,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "182",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
@@ -60,7 +59,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Errors"
+    "settings.editor.selected.configurable": "application.passwordSafe"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -138,8 +137,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Usertypechoose" />
-        <item itemvalue="Application.StudentDashboard" />
         <item itemvalue="Application.Managementlogin" />
+        <item itemvalue="Application.StudentDashboard" />
         <item itemvalue="Application.Studensignup" />
       </list>
     </recent_temporary>
@@ -209,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699108044404</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="DBMS commit of working code">
+      <created>1699109498544</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1699109498544</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

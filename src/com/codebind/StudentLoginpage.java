@@ -8,14 +8,12 @@ import java.sql.*;
 
 public class StudentLoginpage extends JFrame{
     public static String email;
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/signup";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "root";
+
 
 
     private static boolean validateAccount(String email, String password) {
-        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String query = "SELECT account_pass FROM signupinfo WHERE Stdent_mail = ?";
+        try (Connection connection = DatabaseConnection.getConnection()) {
+            String query = "SELECT account_pass FROM signupstat WHERE Stdent_mail = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, email);
 
