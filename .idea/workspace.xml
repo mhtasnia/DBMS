@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26c8d2a1-083e-4d8d-8a1c-f46a682eea41" name="Changes" comment="DBMS commit of working code">
-      <change afterPath="$PROJECT_DIR$/src/com/codebind/AdminInterface.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codebind/AdminInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Studensignup.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Studensignup.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Studensignup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Studensignup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Usertypechoose.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Usertypechoose.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +50,11 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "182",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "313",
     "full.screen.before.presentation.mode": "false",
-    "last_opened_file_path": "D:/New folder (3)/DBMS/jcalendar-1.4.jar",
+    "last_opened_file_path": "D:/New folder (3)/DBMS",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -65,7 +70,7 @@
       <recent name="D:\New folder (3)\DBMS" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Managementlogin">
+  <component name="RunManager" selected="Application.StudentDashboard">
     <configuration name="Managementlogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.codebind.Managementlogin" />
       <module name="DBMS" />
@@ -130,9 +135,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Managementlogin" />
         <item itemvalue="Application.StudentDashboard" />
         <item itemvalue="Application.Usertypechoose" />
+        <item itemvalue="Application.Managementlogin" />
         <item itemvalue="Application.Studensignup" />
       </list>
     </recent_temporary>
@@ -188,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698610938895</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="DBMS commit of working code">
+      <created>1698611470483</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698611470483</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

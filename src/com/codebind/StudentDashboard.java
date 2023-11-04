@@ -19,7 +19,6 @@ public class StudentDashboard extends JFrame {
     private JPanel panel_home;
     private JPanel panel_cs;
     private JPanel panel_nb;
-    private JPanel panel_date;
     private JComboBox combobox2;
     private JDateChooser JDateChooser1;
     private JTextField textField1;
@@ -35,7 +34,7 @@ public class StudentDashboard extends JFrame {
         this.setContentPane(this.panel1);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setBounds(200, 50, 500, 300);
+        this.setBounds(200, 50, 600, 400);
         confirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -56,19 +55,31 @@ public class StudentDashboard extends JFrame {
 
                     int rowsAffected = preparedStatement.executeUpdate();
 
-                    if (rowsAffected > 0) {
-                        System.out.println("Data inserted successfully!");
-                        // You can show a confirmation message to the user here
+                    if (validateForm() && rowsAffected > 0) {
+                        JOptionPane.showMessageDialog(null, "Data inserted successfully!");
                     } else {
-                        System.out.println("Data insertion failed.");
-                        // You can show an error message to the user here
+                        JOptionPane.showMessageDialog(null, "Data insertion failed!");
                     }
                 } catch (SQLException ex) {
                     ex.printStackTrace();
-                    // Handle any exceptions or errors that may occur during the database operation
                 }
             }
         });
+    }
+
+    private boolean validateForm() {
+        String selectedRoute = (String) comboBox1.getSelectedItem();
+        String selectedtime = (String) combobox2.getSelectedItem();
+        Date selecteddate = JDateChooser1.getDate();
+        String id = textField1.getText();
+
+        if (selectedRoute.isEmpty() || selectedtime.isEmpty() || selecteddate == null || id.isEmpty()) {
+            // At least one required field is empty, show an error message
+            JOptionPane.showMessageDialog(null, "Please fill in all required fields.", "warning", 2);
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public static void main(String[] args) {

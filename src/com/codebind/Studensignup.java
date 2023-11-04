@@ -40,6 +40,8 @@ public class Studensignup extends JFrame{
                 String password = new String(passfield1.getPassword());
 
                 if (signupUser(id, email, password)) {
+                    StudentLoginpage f = new StudentLoginpage();
+                    dispose();
                     JOptionPane.showMessageDialog(null, "Signup Successful!");
                 } else {
                     dispose();
