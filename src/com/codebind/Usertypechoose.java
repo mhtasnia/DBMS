@@ -25,6 +25,13 @@ public class Usertypechoose extends JFrame{
 
             }
         });
+        AdminloginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Managementlogin f = new Managementlogin();
+                dispose();
+            }
+        });
     }
 
     public static void main(String[] args) {

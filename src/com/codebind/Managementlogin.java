@@ -3,6 +3,7 @@ package com.codebind;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class Managementlogin extends JFrame {
 
@@ -18,9 +19,9 @@ public class Managementlogin extends JFrame {
                 String Username = textField2.getText();
                 String pass = new String(passField1.getPassword());
 
-                if (Username == "admin" && pass == "1234"){
+                if (Objects.equals(Username, "admin") && pass.equals("1234")){
+                    AdminInterface frame = new AdminInterface();
                     dispose();
-                    //AdminInterface frame = new AdminInterface();
                 }
             }
         });
