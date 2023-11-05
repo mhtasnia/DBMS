@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.Objects;
 
 public class StudentDashboard extends JFrame {
 
@@ -47,6 +48,7 @@ public class StudentDashboard extends JFrame {
                 String insertQuery = "INSERT INTO busbookinginfo (student_id, bus_route, booking_date, booking_time) VALUES (?, ?, ?, ?)";
 
                 try {
+                    Connection connection = DatabaseConnection.getConnection();
                     PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
                     preparedStatement.setString(1, id);
                     preparedStatement.setString(2, selectedRoute);
@@ -73,9 +75,10 @@ public class StudentDashboard extends JFrame {
         Date selecteddate = JDateChooser1.getDate();
         String id = textField1.getText();
 
-        if (selectedRoute.isEmpty() || selectedtime.isEmpty() || selecteddate == null || id.isEmpty()) {
+        assert selectedRoute != null;
+        if (selectedRoute.isEmpty() || Objects.requireNonNull(selectedtime).isEmpty() || selecteddate == null || id.isEmpty()) {
             // At least one required field is empty, show an error message
-            JOptionPane.showMessageDialog(null, "Please fill in all required fields.", "warning", 2);
+            JOptionPane.showMessageDialog(null, "Please fill in all required fields.", "warning", JOptionPane.WARNING_MESSAGE);
             return false;
         } else {
             return true;

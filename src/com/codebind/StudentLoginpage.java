@@ -12,7 +12,8 @@ public class StudentLoginpage extends JFrame{
 
 
     private static boolean validateAccount(String email, String password) {
-        try (Connection connection = DatabaseConnection.getConnection()) {
+        try  {
+            Connection connection = DatabaseConnection.getConnection();
             String query = "SELECT account_pass FROM signupstat WHERE Stdent_mail = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, email);
