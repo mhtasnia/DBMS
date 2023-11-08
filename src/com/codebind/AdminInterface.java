@@ -1,5 +1,5 @@
 package com.codebind;
-import com.toedter.calendar.JDateChooser;
+
 import com.toedter.calendar.JDateChooser;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -98,7 +98,7 @@ public class AdminInterface extends JFrame{
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 while (resultSet.next()) {
                     Vector<Object> rowData = new Vector<>();
-                    rowData.add(resultSet.getInt("student_id"));
+                    rowData.add(resultSet.getString("student_id"));
                     rowData.add(resultSet.getString("bus_route"));
                     rowData.add(resultSet.getDate("booking_date"));
                     rowData.add(resultSet.getString("booking_time"));
