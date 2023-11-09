@@ -20,9 +20,6 @@ public class AdminInterface extends JFrame{
     private JTextArea textArea1;
     private JTextArea textArea2;
     private JComboBox comboBox2;
-    private JComboBox RouteBox3;
-    private JComboBox timeBox4;
-    private JButton addButton;
 
     private void createUIComponents() {
         JDateChooser1 = new JDateChooser();
