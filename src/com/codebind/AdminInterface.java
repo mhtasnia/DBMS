@@ -22,7 +22,6 @@ public class AdminInterface extends JFrame{
     private JComboBox comboBox2;
     private JComboBox RouteBox3;
     private JComboBox timeBox4;
-    private JComboBox BusBox5;
     private JButton addButton;
 
     private void createUIComponents() {
