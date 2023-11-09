@@ -1,12 +1,8 @@
 package com.codebind;
-
 import com.toedter.calendar.JDateChooser;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Date;
 import java.util.Vector;
 import javax.swing.*;
@@ -27,6 +23,7 @@ public class AdminInterface extends JFrame{
     private JComboBox RouteBox3;
     private JComboBox timeBox4;
     private JComboBox BusBox5;
+    private JButton addButton;
 
     private void createUIComponents() {
         JDateChooser1 = new JDateChooser();
@@ -59,11 +56,6 @@ public class AdminInterface extends JFrame{
 
         table1.setModel(tableModel);
     }
-
-
-
-
-
     private void createTable2(String route, Date date, String time) {
         DefaultTableModel tableModel2 = new DefaultTableModel(
                 null,
@@ -163,14 +155,13 @@ public class AdminInterface extends JFrame{
 
         return count;
     }
-
     private int countBus(int count) {
         int buscount = (count / 30) + ((count % 30 != 0) ? 1 : 0);
         return buscount;
     }
 
 
-    public AdminInterface(){
+    public AdminInterface() {
         this.setContentPane(this.panel1);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -191,36 +182,16 @@ public class AdminInterface extends JFrame{
                 String time = (String) comboBox2.getSelectedItem();
                 createTable2(route, date, time);
                 int count = countFilteredEntries(route, date);
-                textArea1.setText (" "+count+" ");
+                textArea1.setText(" " + count + " ");
                 int buscount = countBus(count);
-                textArea2.setText(" "+buscount+" ");
+                textArea2.setText(" " + buscount + " ");
             }
         });
+
     }
-
-    private List<String> fetchDataFromDatabase() {
-        List<String> options = new ArrayList<>();
-
-        try {
-            Connection connection = DatabaseConnection.getConnection();
-            String sql = "SELECT column_name FROM your_table_name";
-            try (Statement statement = connection.createStatement();
-                 ResultSet resultSet = statement.executeQuery(sql)) {
-
-                while (resultSet.next()) {
-                    String option = resultSet.getString("column_name");
-                    options.add(option);
-                }
-
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        public static void main(String[] args) {
+            AdminInterface frame = new AdminInterface();
         }
-
-        return options;
-    }
-
-    public static void main(String[] args) {
-        AdminInterface frame = new AdminInterface();
-    }
 }
+
+
