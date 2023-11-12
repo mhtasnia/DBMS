@@ -1,18 +1,21 @@
 package com.codebind;
+import com.codebind.Buslistedit;
+import com.codebind.DatabaseConnection;
 import com.toedter.calendar.JDateChooser;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
-import java.util.Date;
 import java.util.Vector;
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 
-public class AdminInterface extends JFrame{
-
-    private JButton addBusButton;
+public class Adminhome extends JFrame{
+    private JTabbedPane tabbedPane1;
+    private JPanel panel6;
     private JTable table1;
-    private JTabbedPane panel1;
+    private JButton addBusButton;
+    private JPanel panel4;
     private JTable table2;
     private JComboBox comboBox1;
     private JDateChooser JDateChooser1;
@@ -20,12 +23,36 @@ public class AdminInterface extends JFrame{
     private JTextArea textArea1;
     private JTextArea textArea2;
     private JComboBox comboBox2;
+    private JPanel panel3;
+    private JPanel panel7;
+    private JComboBox comboBox3;
+    private JDateChooser JDatechooser2;
+    private JComboBox comboBox4;
+    private JComboBox combobox5;
+    private JPanel panel5;
+    private JPanel panel1;
+
 
     private void createUIComponents() {
         JDateChooser1 = new JDateChooser();
+        JDatechooser2 = new JDateChooser();
+    }
+    public void buslistcombo() {
+        try {
+            Connection connection = DatabaseConnection.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT buscode FROM buslist");
+
+            while (rs.next()) {
+                combobox5.addItem(rs.getString("buscode"));
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     private void createTable() {
-        
+
         DefaultTableModel tableModel = new DefaultTableModel(
                 null,
                 new String[] {"Bus Code", "Registration Number", "Driver Name", "Contact Info", "Route"}
@@ -52,7 +79,7 @@ public class AdminInterface extends JFrame{
 
         table1.setModel(tableModel);
     }
-    private void createTable2(String route, Date date, String time) {
+    private void createTable2(String route, java.util.Date date, String time) {
         DefaultTableModel tableModel2 = new DefaultTableModel(
                 null,
                 new String[]{"Student id", "Route", "Date", "Time"}
@@ -114,7 +141,7 @@ public class AdminInterface extends JFrame{
         }
         table2.setModel(tableModel2);
     }
-    private int countFilteredEntries(String route, Date date) {
+    private int countFilteredEntries(String route, java.util.Date date) {
         int count = 0;
         Connection connection = DatabaseConnection.getConnection();
 
@@ -157,12 +184,14 @@ public class AdminInterface extends JFrame{
     }
 
 
-    public AdminInterface() {
+    public Adminhome() {
         this.setContentPane(this.panel1);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setBounds(200, 50, 700, 450);
+        this.setBounds(200, 50, 800, 400);
         createTable();
+        buslistcombo();
+
         addBusButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -174,7 +203,7 @@ public class AdminInterface extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 String route = (String) comboBox1.getSelectedItem();
-                Date date = JDateChooser1.getDate();
+                java.util.Date date = JDateChooser1.getDate();
                 String time = (String) comboBox2.getSelectedItem();
                 createTable2(route, date, time);
                 int count = countFilteredEntries(route, date);
@@ -182,12 +211,16 @@ public class AdminInterface extends JFrame{
                 int buscount = countBus(count);
                 textArea2.setText(" " + buscount + " ");
             }
+
         });
 
+
     }
-        public static void main(String[] args) {
-            AdminInterface frame = new AdminInterface();
-        }
+
+    public static void main(String[] args) {
+        Adminhome frame = new Adminhome();
+    }
 }
+
 
 

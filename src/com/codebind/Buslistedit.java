@@ -41,7 +41,7 @@ public class Buslistedit extends JFrame{
 
                         if (rowsAffected > 0) {
                             JOptionPane.showMessageDialog(null, "Data inserted successfully!");
-                            AdminInterface f = new AdminInterface();
+                            Adminhome f = new Adminhome();
                             dispose();
                         } else {
                             JOptionPane.showMessageDialog(null, "Data insertion failed!");

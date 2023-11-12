@@ -20,7 +20,7 @@ public class Managementlogin extends JFrame {
                 String pass = new String(passField1.getPassword());
 
                 if (Objects.equals(Username, "admin") && pass.equals("1234")){
-                    AdminInterface frame = new AdminInterface();
+                    Adminhome frame = new Adminhome();
                     dispose();
                 }
             }
