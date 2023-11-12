@@ -1,6 +1,4 @@
 package com.codebind;
-import com.codebind.Buslistedit;
-import com.codebind.DatabaseConnection;
 import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;
@@ -31,6 +29,7 @@ public class Adminhome extends JFrame{
     private JComboBox combobox5;
     private JPanel panel5;
     private JPanel panel1;
+    private JButton allocateButton;
 
 
     private void createUIComponents() {
@@ -188,7 +187,7 @@ public class Adminhome extends JFrame{
         this.setContentPane(this.panel1);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setBounds(200, 50, 800, 400);
+        this.setBounds(200, 50, 850, 500);
         createTable();
         buslistcombo();
 
