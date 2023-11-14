@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Date;
 import java.util.Objects;
 
@@ -24,10 +25,15 @@ public class StudentDashboard extends JFrame {
     private JDateChooser JDateChooser1;
     private JTextField textField1;
     private JTextField textField2;
+    private JDateChooser Datechooser3;
+    private JLabel Datechooser;
+    private JComboBox route_com;
+    private JComboBox time_com;
 
 
     private void createUIComponents() {
         JDateChooser1 = new JDateChooser();
+        Datechooser3 = new JDateChooser();
     }
     Connection connection = DatabaseConnection.getConnection();
 
@@ -39,7 +45,7 @@ public class StudentDashboard extends JFrame {
         confirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                submitButton.setEnabled(false);
+                confirmButton.setEnabled(false);
                 String id = textField1.getText();
                 String selectedRoute = (String) comboBox1.getSelectedItem();
                 String selectedtime = (String) combobox2.getSelectedItem();
@@ -58,16 +64,50 @@ public class StudentDashboard extends JFrame {
                     int rowsAffected = preparedStatement.executeUpdate();
 
                     if (validateForm() && rowsAffected > 0) {
-                        JOptionPane.showMessageDialog(null, "Data inserted successfully!");
+                        JOptionPane.showMessageDialog(null, "Seat booked!", "Confirmation", 1);
                     } else {
-                        JOptionPane.showMessageDialog(null, "Data insertion failed!");
+                        JOptionPane.showMessageDialog(null, "Data insertion failed!", "Warning", 2);
                     }
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 }
             }
         });
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                submitButton.setEnabled(false);
+                String student_id = textField2.getText();
+                String bus_route = (String) route_com.getSelectedItem();
+                Date booking_date = Datechooser3.getDate();
+                String booking_time = (String) time_com.getSelectedItem();
+                String reason = (String) combobox2.getSelectedItem();
+                String insertQuery = "INSERT INTO cancellation (student_id, bus_route, booking_date, booking_time, cancellation_reason) VALUES (?, ?, ?, ?, ?)";
+                try {
+                    Connection connection = DatabaseConnection.getConnection();
+                    PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
+                    preparedStatement.setString(1, student_id);
+                    preparedStatement.setString(2, bus_route);
+                    preparedStatement.setDate(3, new java.sql.Date(booking_date.getTime()));
+                    preparedStatement.setString(4, booking_time);
+                    preparedStatement.setString(5, reason);
+
+                    int rowsAffected = preparedStatement.executeUpdate();
+
+                    if (validateForm2() && rowsAffected > 0) {
+                        JOptionPane.showMessageDialog(null, "Cancellation Successful!", "confirmation", 1);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Data insertion failed!", "Warning", 2);
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+
+            }
+        });
     }
+
+
 
     private boolean validateForm() {
         String selectedRoute = (String) comboBox1.getSelectedItem();
@@ -78,6 +118,22 @@ public class StudentDashboard extends JFrame {
         assert selectedRoute != null;
         if (selectedRoute.isEmpty() || Objects.requireNonNull(selectedtime).isEmpty() || selecteddate == null || id.isEmpty()) {
             // At least one required field is empty, show an error message
+            JOptionPane.showMessageDialog(null, "Please fill in all required fields.", "warning", JOptionPane.WARNING_MESSAGE);
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    private boolean validateForm2() {
+        String student_id = textField2.getText();
+        String bus_route = (String) route_com.getSelectedItem();
+        Date booking_date = Datechooser3.getDate();
+        String booking_time = (String) time_com.getSelectedItem();
+        String reason = (String) combobox2.getSelectedItem();
+
+        assert bus_route != null;
+        if (bus_route.isEmpty() || Objects.requireNonNull(booking_time).isEmpty() || booking_date == null || student_id.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please fill in all required fields.", "warning", JOptionPane.WARNING_MESSAGE);
             return false;
         } else {

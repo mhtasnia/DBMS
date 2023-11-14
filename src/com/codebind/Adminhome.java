@@ -31,11 +31,17 @@ public class Adminhome extends JFrame{
     private JPanel panel5;
     private JPanel panel1;
     private JButton allocateButton;
+    private JDateChooser JDatechooser3;
+    private JComboBox tbox;
+    private JTable table3;
+    private JButton button1;
+    private JComboBox routebox;
 
 
     private void createUIComponents() {
         JDateChooser1 = new JDateChooser();
         JDatechooser2 = new JDateChooser();
+        JDatechooser3 = new JDateChooser();
     }
     public void buslistcombo() {
         try {
@@ -141,6 +147,62 @@ public class Adminhome extends JFrame{
         }
         table2.setModel(tableModel2);
     }
+    private void createTable3(String route, java.util.Date date) {
+        DefaultTableModel tableModel3 = new DefaultTableModel(
+                null,
+                new String[]{"Route", "Date", "Time", "Buscode"}
+        );
+
+        tableModel3.setRowCount(0);
+        Connection connection = DatabaseConnection.getConnection();
+
+        StringBuilder queryBuilder = new StringBuilder("SELECT * FROM allocationdetails WHERE 1=1");
+
+        if (date != null) {
+            queryBuilder.append(" AND date = ?");
+        }
+
+        if (route != null && !route.isEmpty()) {
+            queryBuilder.append(" AND route = ?");
+        }
+
+        queryBuilder.append(" ORDER BY route");
+
+        try  {
+            PreparedStatement preparedStatement = connection.prepareStatement(queryBuilder.toString());
+            int parameterIndex = 1;
+
+            if (date != null) {
+                preparedStatement.setDate(parameterIndex, new java.sql.Date(date.getTime()));
+                parameterIndex++;
+            }
+
+            if (route != null && !route.isEmpty()) {
+                preparedStatement.setString(parameterIndex, route);
+                parameterIndex++;
+            }
+
+
+            try  {
+                ResultSet resultSet = preparedStatement.executeQuery();
+                while (resultSet.next()) {
+                    Vector<Object> rowData = new Vector<>();
+                    rowData.add(resultSet.getString("route"));
+                    rowData.add(resultSet.getDate("date"));
+                    rowData.add(resultSet.getString("time"));
+                    rowData.add(resultSet.getString("buscode"));
+                    tableModel3.addRow(rowData);
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        table3.setModel(tableModel3);
+    }
+
     private int countFilteredEntries(String route, java.util.Date date) {
         int count = 0;
         Connection connection = DatabaseConnection.getConnection();
@@ -247,6 +309,14 @@ public class Adminhome extends JFrame{
             }
         });
 
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String route = (String) routebox.getSelectedItem();
+                java.util.Date date = JDatechooser3.getDate();
+                createTable3(route, date);
+            }
+        });
     }
     private boolean validateForm() {
         String route = (String) comboBox3.getSelectedItem();

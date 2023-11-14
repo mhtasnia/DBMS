@@ -39,7 +39,7 @@ public class Usertypechoose extends JFrame{
         frame.setContentPane(frame.panel1);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        frame.setBounds(200, 200, 400, 300);
+        frame.setBounds(200, 200, 600, 400);
         frame.setTitle("Login");
 
     }
