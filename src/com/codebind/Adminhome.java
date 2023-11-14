@@ -1,11 +1,12 @@
 package com.codebind;
 import com.toedter.calendar.JDateChooser;
-
+import java.util.Date;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
+import java.util.Objects;
 import java.util.Vector;
 
 public class Adminhome extends JFrame{
@@ -54,7 +55,7 @@ public class Adminhome extends JFrame{
 
         DefaultTableModel tableModel = new DefaultTableModel(
                 null,
-                new String[] {"Bus Code", "Registration Number", "Driver Name", "Contact Info", "Route"}
+                new String[] {"Bus Code", "Registration Number", "Driver Name", "Contact Info"}
         );
 
         try  {
@@ -69,7 +70,7 @@ public class Adminhome extends JFrame{
                 rowData.add(resultSet.getString("reg_no"));
                 rowData.add(resultSet.getString("drivername"));
                 rowData.add(resultSet.getString("driver_contact"));
-                rowData.add(resultSet.getString("route"));
+                //rowData.add(resultSet.getString("route"));
                 tableModel.addRow(rowData);
             }
         } catch (SQLException e) {
@@ -214,6 +215,53 @@ public class Adminhome extends JFrame{
         });
 
 
+        allocateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                allocateButton.setEnabled(false);
+                String route = (String) comboBox3.getSelectedItem();
+                Date date = JDatechooser2.getDate();
+                String time = (String) comboBox4.getSelectedItem();
+                String buscode = (String) combobox5.getSelectedItem();
+
+                String insertquery = "INSERT into allocationdetails (route, date, time, buscode) VALUE (?, ?, ?, ?)";
+
+                try {
+                    Connection connection = DatabaseConnection.getConnection();
+                    PreparedStatement preparedStatement = connection.prepareStatement(insertquery);
+                    preparedStatement.setString(1, route);
+                    preparedStatement.setDate(2, new java.sql.Date(date.getTime()));
+                    preparedStatement.setString(3, time);
+                    preparedStatement.setString(4, buscode);
+
+                    int rowsAffected = preparedStatement.executeUpdate();
+
+                    if (validateForm() && rowsAffected > 0) {
+                        JOptionPane.showMessageDialog(null, "Data inserted successfully!");
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Data insertion failed!");
+                    }
+                }catch (SQLException ex){
+                    ex.printStackTrace();
+                }
+            }
+        });
+
+    }
+    private boolean validateForm() {
+        String route = (String) comboBox3.getSelectedItem();
+        Date date = JDatechooser2.getDate();
+        String time = (String) comboBox4.getSelectedItem();
+        String buscode = (String) combobox5.getSelectedItem();
+
+        assert route != null;
+        if (route.isEmpty() || Objects.requireNonNull(time).isEmpty() || date == null || buscode.isEmpty()) {
+            // At least one required field is empty, show an error message
+            JOptionPane.showMessageDialog(null, "Please fill in all required fields.", "warning", JOptionPane.WARNING_MESSAGE);
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public static void main(String[] args) {
