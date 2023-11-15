@@ -7,13 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26c8d2a1-083e-4d8d-8a1c-f46a682eea41" name="Changes" comment="DBMS commit of working code">
-      <change afterPath="$PROJECT_DIR$/src/com/codebind/Verifieradd.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/codebind/Verifieradd.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codebind/Adminhome.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Adminhome.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codebind/Adminhome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Adminhome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Studensignup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Studensignup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -349,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700072853795</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="DBMS commit of working code">
+      <created>1700082582521</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1700082582521</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

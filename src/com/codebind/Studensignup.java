@@ -15,7 +15,7 @@ public class Studensignup extends JFrame{
         this.setContentPane(this.panel1);
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setBounds(200, 50, 500, 400);
+        this.setBounds(200, 50, 500, 350);
         this.setTitle("Signup");
         signUpButton.addActionListener(new ActionListener() {
             @Override
