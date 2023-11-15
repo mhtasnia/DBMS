@@ -37,6 +37,9 @@ public class Adminhome extends JFrame{
     private JTable table3;
     private JButton button1;
     private JComboBox routebox;
+    private JTable table4;
+    private JTable table5;
+    private JButton addButton;
 
 
     private void createUIComponents() {
@@ -203,7 +206,62 @@ public class Adminhome extends JFrame{
         }
         table3.setModel(tableModel3);
     }
+    private void createTable4() {
 
+        DefaultTableModel tableModel4 = new DefaultTableModel(
+                null,
+                new String[] {"Student ID", "Route", "Date", "Time", "Cancellation Reason"}
+        );
+
+        try  {
+            Connection connection = DatabaseConnection.getConnection();
+            String query = "SELECT * FROM cancellation";
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                Vector<Object> rowData = new Vector<>();
+                rowData.add(resultSet.getString("student_id"));
+                rowData.add(resultSet.getString("bus_route"));
+                rowData.add(resultSet.getDate("booking_date"));
+                rowData.add(resultSet.getString("booking_time"));
+                rowData.add(resultSet.getString("cancellation_reason"));
+                tableModel4.addRow(rowData);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        table4.setModel(tableModel4);
+    }
+    private void createTable5() {
+
+        DefaultTableModel tableModel5 = new DefaultTableModel(
+                null,
+                new String[] {"Name", "Username", "Route", "Contact Info", "Password"}
+        );
+
+        try  {
+            Connection connection = DatabaseConnection.getConnection();
+            String query = "SELECT * FROM verifier";
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                Vector<Object> rowData = new Vector<>();
+                rowData.add(resultSet.getString("v_name"));
+                rowData.add(resultSet.getString("username"));
+                rowData.add(resultSet.getString("route"));
+                rowData.add(resultSet.getString("contact_info"));
+                rowData.add(resultSet.getString("Pass"));
+                tableModel5.addRow(rowData);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        table5.setModel(tableModel5);
+    }
     private int countFilteredEntries(String route, java.util.Date date) {
         int count = 0;
         Connection connection = DatabaseConnection.getConnection();
@@ -253,6 +311,8 @@ public class Adminhome extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setBounds(200, 50, 850, 500);
         createTable();
+        createTable4();
+        createTable5();
         buslistcombo();
 
         addBusButton.addActionListener(new ActionListener() {
@@ -316,6 +376,13 @@ public class Adminhome extends JFrame{
                 String route = (String) routebox.getSelectedItem();
                 java.util.Date date = JDatechooser3.getDate();
                 createTable3(route, date);
+            }
+        });
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Verifieradd f = new Verifieradd();
+                dispose();
             }
         });
     }

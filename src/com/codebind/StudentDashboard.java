@@ -143,7 +143,7 @@ public class StudentDashboard extends JFrame {
                 String bus_route = (String) route_com.getSelectedItem();
                 Date booking_date = Datechooser3.getDate();
                 String booking_time = (String) time_com.getSelectedItem();
-                String reason = (String) combobox2.getSelectedItem();
+                String reason = (String) comboBox2.getSelectedItem();
                 String insertQuery = "INSERT INTO cancellation (student_id, bus_route, booking_date, booking_time, cancellation_reason) VALUES (?, ?, ?, ?, ?)";
                 try {
                     Connection connection = DatabaseConnection.getConnection();

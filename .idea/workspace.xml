@@ -7,8 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26c8d2a1-083e-4d8d-8a1c-f46a682eea41" name="Changes" comment="DBMS commit of working code">
+      <change afterPath="$PROJECT_DIR$/src/com/codebind/Verifieradd.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/codebind/Verifieradd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Adminhome.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Adminhome.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Adminhome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Adminhome.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +56,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "182",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
@@ -74,7 +79,7 @@
       <recent name="D:\New folder (3)\DBMS" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StudentDashboard">
+  <component name="RunManager">
     <configuration name="Adminhome" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.codebind.Adminhome" />
       <module name="DBMS" />
@@ -337,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700069307372</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="DBMS commit of working code">
+      <created>1700072853795</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1700072853795</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
