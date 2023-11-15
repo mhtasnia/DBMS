@@ -32,6 +32,7 @@ public class Adminhome extends JFrame{
     private JPanel panel1;
     private JButton allocateButton;
     private JDateChooser JDatechooser3;
+
     private JComboBox tbox;
     private JTable table3;
     private JButton button1;

@@ -1,14 +1,16 @@
 package com.codebind;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.Date;
 import java.util.Objects;
+import java.util.Vector;
 
 public class StudentDashboard extends JFrame {
 
@@ -17,10 +19,6 @@ public class StudentDashboard extends JFrame {
     private JButton confirmButton;
     private JComboBox comboBox2;
     private JButton submitButton;
-    private JPanel panel_ab;
-    private JPanel panel_home;
-    private JPanel panel_cs;
-    private JPanel panel_nb;
     private JComboBox combobox2;
     private JDateChooser JDateChooser1;
     private JTextField textField1;
@@ -29,12 +27,76 @@ public class StudentDashboard extends JFrame {
     private JLabel Datechooser;
     private JComboBox route_com;
     private JComboBox time_com;
+    private JComboBox comboBox3;
+    private JButton viewButton;
+    private JTable table1;
+    private JDateChooser JDateChooser2;
 
 
     private void createUIComponents() {
         JDateChooser1 = new JDateChooser();
         Datechooser3 = new JDateChooser();
+        JDateChooser2 = new JDateChooser();
     }
+
+    private void createTable(String route, java.util.Date date) {
+        DefaultTableModel tableModel = new DefaultTableModel(
+                null,
+                new String[]{"Route", "Date", "Time", "Bus"}
+        );
+
+        tableModel.setRowCount(0);
+        Connection connection = DatabaseConnection.getConnection();
+
+        StringBuilder queryBuilder = new StringBuilder("SELECT * FROM allocationdetails WHERE 1=1");
+
+        if (date != null) {
+            queryBuilder.append(" AND date = ?");
+        }
+
+        if (route != null && !route.isEmpty()) {
+            queryBuilder.append(" AND route = ?");
+        }
+
+        queryBuilder.append(" ORDER BY route");
+
+        try  {
+            PreparedStatement preparedStatement = connection.prepareStatement(queryBuilder.toString());
+            int parameterIndex = 1;
+
+            if (date != null) {
+                preparedStatement.setDate(parameterIndex, new java.sql.Date(date.getTime()));
+                parameterIndex++;
+            }
+
+            if (route != null && !route.isEmpty()) {
+                preparedStatement.setString(parameterIndex, route);
+                parameterIndex++;
+            }
+
+
+            try  {
+                ResultSet resultSet = preparedStatement.executeQuery();
+                while (resultSet.next()) {
+                    Vector<Object> rowData = new Vector<>();
+                    rowData.add(resultSet.getString("route"));
+                    rowData.add(resultSet.getDate("date"));
+                    rowData.add(resultSet.getString("time"));
+                    rowData.add(resultSet.getString("buscode"));
+                    tableModel.addRow(rowData);
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        table1.setModel(tableModel);
+    }
+
+
+
     Connection connection = DatabaseConnection.getConnection();
 
     public StudentDashboard() {
@@ -102,6 +164,15 @@ public class StudentDashboard extends JFrame {
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 }
+
+            }
+        });
+        viewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String route = (String) comboBox3.getSelectedItem();
+                java.util.Date date = JDateChooser2.getDate();
+                createTable(route, date);
 
             }
         });
