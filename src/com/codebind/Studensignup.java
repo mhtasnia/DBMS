@@ -25,8 +25,8 @@ public class Studensignup extends JFrame{
                 String password = new String(passfield1.getPassword());
 
                 if (id.isEmpty() || email.isEmpty() || password.isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "Field Empty!", "Warning", 2);
-                }else if (signupUser(id, email, password) && isUsernameTaken(id) == false) {
+                    JOptionPane.showMessageDialog(null, "Field Empty!", "Warning", JOptionPane.WARNING_MESSAGE);
+                }else if (signupUser(id, email, password) && !isUsernameTaken(id)) {
                     StudentLoginpage f = new StudentLoginpage();
                     dispose();
                     JOptionPane.showMessageDialog(null, "Signup Successful!");
