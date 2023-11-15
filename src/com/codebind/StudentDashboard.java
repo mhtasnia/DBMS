@@ -103,7 +103,7 @@ public class StudentDashboard extends JFrame {
         this.setContentPane(this.panel1);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setBounds(200, 50, 600, 400);
+        this.setBounds(200, 50, 1000, 300);
         confirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
