@@ -32,6 +32,12 @@ public class Usertypechoose extends JFrame{
                 dispose();
             }
         });
+        VerifierloginButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "Will be available soon", "Sorry!", JOptionPane.WARNING_MESSAGE);
+            }
+        });
     }
 
     public static void main(String[] args) {

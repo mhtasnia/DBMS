@@ -126,9 +126,9 @@ public class StudentDashboard extends JFrame {
                     int rowsAffected = preparedStatement.executeUpdate();
 
                     if (validateForm() && rowsAffected > 0) {
-                        JOptionPane.showMessageDialog(null, "Seat booked!", "Confirmation", 1);
+                        JOptionPane.showMessageDialog(null, "Not available at this moment\nPay in cash", "Confirmation", 1);
                     } else {
-                        JOptionPane.showMessageDialog(null, "Data insertion failed!", "Warning", 2);
+                        JOptionPane.showMessageDialog(null, "Booking failed!", "Warning", 2);
                     }
                 } catch (SQLException ex) {
                     ex.printStackTrace();

@@ -59,6 +59,14 @@ public class Studensignup extends JFrame{
     }
 
     private static boolean signupUser(String id, String email, String password) {
+        if (!isValidEmail(email)) {
+            JOptionPane.showMessageDialog(null, "Invalid email format");
+            return false;
+        }
+        if (password.length() < 8) {
+            JOptionPane.showMessageDialog(null, "Password must be at least 8 characters long");
+            return false;
+        }
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
             String query = "INSERT INTO signupstat (student_id, Stdent_mail, account_pass) VALUES (?, ?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -73,6 +81,11 @@ public class Studensignup extends JFrame{
             JOptionPane.showMessageDialog(null, "Database connection error: " + e.getMessage());
         }
         return false;
+    }
+    private static boolean isValidEmail(String email) {
+        // You can use a regular expression for basic email format validation
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        return email.matches(emailRegex);
     }
     private JPanel panel1;
     private JTextField textField2;
