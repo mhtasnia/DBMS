@@ -12,10 +12,10 @@ public class Studensignup extends JFrame{
 
 
     Studensignup(){
-        this.setContentPane(this.panel1);
+        this.setContentPane(this.panel2);
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setBounds(200, 50, 500, 350);
+        this.setBounds(200, 50, 500, 450);
         this.setTitle("Signup");
         signUpButton.addActionListener(new ActionListener() {
             @Override
@@ -34,6 +34,13 @@ public class Studensignup extends JFrame{
                     dispose();
                     JOptionPane.showMessageDialog(null, "Signup Failed. User with the same ID or Email already exists.");
                 }
+            }
+        });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                StudentLoginpage f = new StudentLoginpage();
+                dispose();
             }
         });
     }
@@ -72,6 +79,8 @@ public class Studensignup extends JFrame{
     private JButton signUpButton;
     private JPasswordField passfield1;
     private JTextField textfield1;
+    private JButton backButton;
+    private JPanel panel2;
 
     public static void main(String[] args) {
         Studensignup f4 = new Studensignup();

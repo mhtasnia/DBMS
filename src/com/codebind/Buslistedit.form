@@ -243,7 +243,8 @@
                 </constraints>
                 <properties>
                   <background color="-16678184"/>
-                  <text value="Back"/>
+                  <icon value="com/codebind/right-arrow.png"/>
+                  <text value=""/>
                 </properties>
               </component>
             </children>
