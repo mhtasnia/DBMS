@@ -7,9 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26c8d2a1-083e-4d8d-8a1c-f46a682eea41" name="Changes" comment="DBMS commit of working code">
-      <change beforePath="$PROJECT_DIR$/src/com/codebind/Studensignup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Studensignup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentLoginpage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Buslistedit.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Buslistedit.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Buslistedit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Buslistedit.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,18 +52,18 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "182",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE": "left",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "313",
     "full.screen.before.presentation.mode": "false",
-    "last_opened_file_path": "D:/New folder (3)/MatrixInverse",
+    "last_opened_file_path": "E:/semester 3/SystemSeatBooking-master",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propCompiler"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -352,7 +352,21 @@
       <option name="project" value="LOCAL" />
       <updated>1700082582521</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="DBMS commit of working code">
+      <created>1700082894813</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1700082894813</updated>
+    </task>
+    <task id="LOCAL-00028" summary="DBMS commit of working code">
+      <created>1700083167366</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1700083167366</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

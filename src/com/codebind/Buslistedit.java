@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Date;
 
 public class Buslistedit extends JFrame{
    // Connection connection = DatabaseConnection.getConnection();
@@ -15,7 +14,7 @@ public class Buslistedit extends JFrame{
         this.setContentPane(this.panel1);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setBounds(200, 50, 400, 330);
+        this.setBounds(200, 50, 600, 450);
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -54,6 +53,13 @@ public class Buslistedit extends JFrame{
                 }
             }
         });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Adminhome f = new Adminhome();
+                dispose();
+            }
+        });
     }
 
     private boolean validateForm() {
@@ -78,6 +84,7 @@ public class Buslistedit extends JFrame{
     private JComboBox comboBox1;
     private JButton saveButton;
     private JPanel panel1;
+    private JButton backButton;
 
     public static void main(String[] args) {
         Buslistedit frame = new Buslistedit();
