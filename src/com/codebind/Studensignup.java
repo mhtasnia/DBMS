@@ -46,8 +46,9 @@ public class Studensignup extends JFrame{
     }
     private boolean isUsernameTaken(String username) {
         String query = "SELECT * FROM signupstat WHERE stdent_id = ?";
-        try (Connection connection = DatabaseConnection.getConnection();
-             PreparedStatement statement = connection.prepareStatement(query)) {
+        try  {
+            Connection connection = DatabaseConnection.getConnection();
+            PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, username);
             try (ResultSet resultSet = statement.executeQuery()) {
                 return resultSet.next(); // If a record is found, the username is taken
@@ -67,7 +68,8 @@ public class Studensignup extends JFrame{
             JOptionPane.showMessageDialog(null, "Password must be at least 8 characters long");
             return false;
         }
-        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
+        try  {
+            Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
             String query = "INSERT INTO signupstat (student_id, Stdent_mail, account_pass) VALUES (?, ?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                 preparedStatement.setString(1, id);
