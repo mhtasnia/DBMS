@@ -10,12 +10,15 @@ public class Usertypechoose extends JFrame{
     private JButton StudentloginButton;
     private JButton AdminloginButton;
     private JButton VerifierloginButton;
-    private JLabel stext;
-    private JLabel atext;
-    private JLabel vtext;
 
 
     public Usertypechoose() {
+        this.setContentPane(this.panel1);
+        this.setVisible(true);
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setBounds(200, 200, 850, 550);
+        this.setTitle("Login");
+
         StudentloginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -42,11 +45,6 @@ public class Usertypechoose extends JFrame{
 
     public static void main(String[] args) {
         Usertypechoose frame = new Usertypechoose();
-        frame.setContentPane(frame.panel1);
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        frame.setBounds(200, 200, 600, 400);
-        frame.setTitle("Login");
-
+        
     }
 }

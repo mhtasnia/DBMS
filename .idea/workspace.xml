@@ -8,7 +8,15 @@
   <component name="ChangeListManager">
     <list default="true" id="26c8d2a1-083e-4d8d-8a1c-f46a682eea41" name="Changes" comment="DBMS commit of working code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/codebind/Studensignup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Studensignup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Adminhome.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Adminhome.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Adminhome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Adminhome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Managementlogin.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Managementlogin.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Managementlogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Managementlogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/StudentDashboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Usertypechoose.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Usertypechoose.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/Usertypechoose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/Usertypechoose.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/codebind/unnamed.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/codebind/unnamed.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,14 +59,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "false",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "182",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "193",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE": "left",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "313",
     "full.screen.before.presentation.mode": "false",
-    "last_opened_file_path": "E:/semester 3/SystemSeatBooking-master",
+    "last_opened_file_path": "D:/New folder (3)/DBMS",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -153,8 +161,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Usertypechoose" />
-        <item itemvalue="Application.StudentDashboard" />
         <item itemvalue="Application.Adminhome" />
+        <item itemvalue="Application.StudentDashboard" />
         <item itemvalue="Application.Managementlogin" />
         <item itemvalue="Application.Studensignup" />
       </list>
@@ -386,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1701373682728</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="DBMS commit of working code">
+      <created>1701374206355</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1701374206355</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

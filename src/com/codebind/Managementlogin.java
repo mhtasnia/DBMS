@@ -11,7 +11,7 @@ public class Managementlogin extends JFrame {
         this.setContentPane(this.panel1);
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setBounds(200, 50, 300, 200);
+        this.setBounds(200, 50, 700, 450);
 
         logInButton.addActionListener(new ActionListener() {
             @Override
@@ -25,11 +25,20 @@ public class Managementlogin extends JFrame {
                 }
             }
         });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Usertypechoose f = new Usertypechoose();
+                dispose();
+            }
+        });
     }
-    private JPanel panel1;
+    private JPanel panel2;
     private JTextField textField2;
     private JButton logInButton;
     private JPasswordField passField1;
+    private JPanel panel1;
+    private JButton backButton;
 
     public static void main(String[] args) {
         Managementlogin frame = new Managementlogin();

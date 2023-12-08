@@ -31,6 +31,7 @@ public class StudentDashboard extends JFrame {
     private JButton viewButton;
     private JTable table1;
     private JDateChooser JDateChooser2;
+    private JButton backButton;
 
 
     private void createUIComponents() {
@@ -103,7 +104,7 @@ public class StudentDashboard extends JFrame {
         this.setContentPane(this.panel1);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setBounds(200, 50, 1000, 300);
+        this.setBounds(200, 50, 1000, 600);
         confirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -174,6 +175,13 @@ public class StudentDashboard extends JFrame {
                 java.util.Date date = JDateChooser2.getDate();
                 createTable(route, date);
 
+            }
+        });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Usertypechoose f = new Usertypechoose();
+                dispose();
             }
         });
     }

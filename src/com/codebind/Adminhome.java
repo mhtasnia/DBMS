@@ -40,6 +40,7 @@ public class Adminhome extends JFrame{
     private JTable table4;
     private JTable table5;
     private JButton addButton;
+    private JButton backButton;
 
 
     private void createUIComponents() {
@@ -309,7 +310,7 @@ public class Adminhome extends JFrame{
         this.setContentPane(this.panel1);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setBounds(200, 50, 850, 500);
+        this.setBounds(200, 50, 1100, 650);
         createTable();
         createTable4();
         createTable5();
@@ -385,6 +386,13 @@ public class Adminhome extends JFrame{
                 dispose();
             }
         });
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Usertypechoose f = new Usertypechoose();
+                dispose();
+            }
+        });
     }
     private boolean validateForm() {
         String route = (String) comboBox3.getSelectedItem();
@@ -393,8 +401,7 @@ public class Adminhome extends JFrame{
         String buscode = (String) combobox5.getSelectedItem();
 
         assert route != null;
-        if (route.isEmpty() || Objects.requireNonNull(time).isEmpty() || date == null || buscode.isEmpty()) {
-            // At least one required field is empty, show an error message
+        if (route.isEmpty() || Objects.requireNonNull(time).isEmpty() || date == null || Objects.requireNonNull(buscode).isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please fill in all required fields.", "warning", JOptionPane.WARNING_MESSAGE);
             return false;
         } else {
