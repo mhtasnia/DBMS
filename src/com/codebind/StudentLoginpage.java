@@ -36,7 +36,7 @@ public class StudentLoginpage extends JFrame{
         this.setVisible(true);
         this.setTitle("Student Login");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setBounds(200, 200, 700, 350);
+        this.setBounds(200, 50, 700, 450);
         signUpButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

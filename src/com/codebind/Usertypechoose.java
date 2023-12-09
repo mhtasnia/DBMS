@@ -16,7 +16,7 @@ public class Usertypechoose extends JFrame{
         this.setContentPane(this.panel1);
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setBounds(200, 200, 850, 550);
+        this.setBounds(200, 50, 1100, 650);
         this.setTitle("Login");
 
         StudentloginButton.addActionListener(new ActionListener() {
