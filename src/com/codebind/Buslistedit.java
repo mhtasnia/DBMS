@@ -14,7 +14,7 @@ public class Buslistedit extends JFrame{
         this.setContentPane(this.panel1);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setBounds(200, 50, 600, 450);
+        this.setBounds(200, 50,1100, 650);
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

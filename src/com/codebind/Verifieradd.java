@@ -16,13 +16,14 @@ public class Verifieradd extends  JFrame{
     private JButton addButton;
     private JTextField textfield2;
     private JTextField textField4;
+    private JButton backButton;
 
 
     public Verifieradd() {
         this.setContentPane(panel1);
         this.setVisible(true);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setBounds(200,50, 500, 300);
+        this.setBounds(200,50, 1100, 650);
 
         addButton.addActionListener(new ActionListener() {
             @Override
@@ -61,6 +62,13 @@ public class Verifieradd extends  JFrame{
             }
         });
 
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Adminhome f = new Adminhome();
+                dispose();
+            }
+        });
     }
 
     private boolean validateForm2() {
