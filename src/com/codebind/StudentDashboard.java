@@ -24,7 +24,6 @@ public class StudentDashboard extends JFrame {
     private JTextField textField1;
     private JTextField textField2;
     private JDateChooser Datechooser3;
-    private JLabel Datechooser;
     private JComboBox route_com;
     private JComboBox time_com;
     private JComboBox comboBox3;
@@ -32,6 +31,7 @@ public class StudentDashboard extends JFrame {
     private JTable table1;
     private JDateChooser JDateChooser2;
     private JButton backButton;
+    private JLabel Datechooser;
 
 
     private void createUIComponents() {
@@ -104,7 +104,7 @@ public class StudentDashboard extends JFrame {
         this.setContentPane(this.panel1);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setBounds(200, 50, 1000, 600);
+        this.setBounds(200, 50, 1100, 650);
         confirmButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
