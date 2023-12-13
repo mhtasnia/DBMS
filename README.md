@@ -1,1 +1,1 @@
-Bus MAnagement System using JAVA Swing
+Bus Management System using JAVA Swing
