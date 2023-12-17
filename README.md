@@ -60,21 +60,21 @@ Troubleshooting:
 Run Procedure
 
 Run the Application:
-6. Locate the main class of your project (the class containing the main method). Right-click on the file and select "Run" to execute your application.
+Locate the main class of your project (the class containing the main method). Right-click on the file and select "Run" to execute your application.
 
 Troubleshooting:
 - If encountering issues during the application launch, review the console output in IntelliJ IDEA for error messages and stack traces. Ensure that all dependencies are resolved correctly.
 
 Verify Output:
-7. Check the console output in IntelliJ IDEA to confirm that your application has started without errors.
+Check the console output in IntelliJ IDEA to confirm that your application has started without errors.
 
 Access the Application:
-8. Open a web browser or any other client application interacting with your system. Access the application based on your project's URL or entry point.
+Open a web browser or any other client application interacting with your system. Access the application based on your project's URL or entry point.
 Troubleshooting:
 - If unable to access the application, check the network configurations and ensure that the application is running on the specified port.
 
 Test Functionality:
-9. Test various functionalities of your application, including student seat booking, cancellation, admin features, etc., to ensure proper integration and functionality.
+Test various functionalities of your application, including student seat booking, cancellation, admin features, etc., to ensure proper integration and functionality.
 Troubleshooting:
 - If functionalities are not working as expected, review error messages in the application logs and console output for clues on potential issues. Ensure that the database is populated with the necessary data.
 
