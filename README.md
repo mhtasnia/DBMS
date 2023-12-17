@@ -25,6 +25,59 @@ Key Features
    - Instant information on bus locations, delays, and other relevant updates.
 4. Efficient Resource Allocation:
    - Optimal allocation of university transport resources based on demand.
+  
+     
+  
+Build/Run Procedure
+
+Prerequisites
+1. Java Development Kit (JDK):
+   - Ensure that you have Java installed on your system. You can download it from the [official Oracle website] (https://www.oracle.com/java/technologies/javase-downloads.html).
+2. IntelliJ IDEA:
+   - Download and install IntelliJ IDEA, the integrated development environment, from the [official website] (https://www.jetbrains.com/idea/download/).
+3. MySQL Database:
+   - Set up a MySQL database server. Create a new database for your project and note down the connection details (e.g., database URL, username, and password).
+
+Build Process
+1. Clone or Download the Project:
+   - Clone your project repository or download the project files.
+2. Build Database:
+	-Build the database by following instructions in the “DBMSdata.sql” file
+2. Open Project in IntelliJ IDEA:
+   - Launch IntelliJ IDEA and open your project by selecting the project directory.
+3. Configure Project SDK:
+   - Set up the Java SDK in IntelliJ IDEA. Go to "File" > "Project Structure" > "Project" and select the appropriate JDK version.
+4. Configure Database Connection:
+   - Open the data source configuration in IntelliJ IDEA to connect to your MySQL database. Go to "View" > "Tool Windows" > "Database" and add a new data source using your MySQL connection details.
+Troubleshooting: 
+- If unable to connect to the database, ensure that the MySQL server is running and that the provided connection details are accurate.
+
+
+
+5. Set Up Dependencies:
+   - Confirm that your project's external libraries, such as `MySQL connector` and `jcalendar` JAR, are accurately configured in your build tool. IntelliJ IDEA typically prompts for their import, ensuring a smooth integration process. Verify that these dependencies are correctly established for seamless functionality.  
+
+Run Procedure
+
+Run the Application:
+6. Locate the main class of your project (the class containing the main method). Right-click on the file and select "Run" to execute your application.
+
+Troubleshooting:
+- If encountering issues during the application launch, review the console output in IntelliJ IDEA for error messages and stack traces. Ensure that all dependencies are resolved correctly.
+
+Verify Output:
+7. Check the console output in IntelliJ IDEA to confirm that your application has started without errors.
+
+Access the Application:
+8. Open a web browser or any other client application interacting with your system. Access the application based on your project's URL or entry point.
+Troubleshooting:
+- If unable to access the application, check the network configurations and ensure that the application is running on the specified port.
+
+Test Functionality:
+9. Test various functionalities of your application, including student seat booking, cancellation, admin features, etc., to ensure proper integration and functionality.
+Troubleshooting:
+- If functionalities are not working as expected, review error messages in the application logs and console output for clues on potential issues. Ensure that the database is populated with the necessary data.
+
 
 Future Improvements
 
